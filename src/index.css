@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #070b14;
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-interactive {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.25s ease;
+}
+
+.glass-panel-interactive:hover {
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 12px 36px 0 rgba(6, 182, 212, 0.12);
+  transform: translateY(-2px);
+}
+
+.glass-pill {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+/* Energy Glows */
+.glow-cyan {
+  box-shadow: 0 0 25px -3px rgba(6, 182, 212, 0.35);
+}
+
+.glow-solar {
+  box-shadow: 0 0 25px -3px rgba(245, 158, 11, 0.35);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px -3px rgba(16, 185, 129, 0.35);
+}
+
+.glow-rose {
+  box-shadow: 0 0 25px -3px rgba(239, 68, 68, 0.35);
+}
+
+/* Animated Dash Flows */
+@keyframes flow-forward {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes flow-backward {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 40;
+  }
+}
+
+.animate-flow-fast {
+  animation: flow-forward 1s linear infinite;
+}
+
+.animate-flow-normal {
+  animation: flow-forward 2s linear infinite;
+}
+
+.animate-flow-reverse {
+  animation: flow-backward 2s linear infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-flow-fast,
+  .animate-flow-normal,
+  .animate-flow-reverse,
+  .animate-spin-slow,
+  .animate-float {
+    animation: none !important;
+  }
+}
+
+.no-motion .animate-flow-fast,
+.no-motion .animate-flow-normal,
+.no-motion .animate-flow-reverse,
+.no-motion .animate-spin-slow,
+.no-motion .animate-float {
+  animation: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
